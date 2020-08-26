@@ -25,6 +25,27 @@ bool Tree<T>::contains(T value){
 }
 
 template<class T>
+std::shared_ptr<node<T>> Tree<T>::findMax(std::shared_ptr<node<T>>parent){
+    if( parent != nullptr){
+        while(parent->right != nullptr ){
+            parent = parent->right;
+        }
+    }
+    return parent;
+}
+
+template<class T>
+std::shared_ptr<node<T>> Tree<T>::findMin(std::shared_ptr<node<T>> parent){
+    if(parent == nullptr){
+        return nullptr;
+    }
+    if(parent->left == nullptr){
+        return parent;
+    }
+    return findMin(parent->left);
+}
+
+template<class T>
 bool Tree<T>::contains(std::shared_ptr<node<T>> &parent, T value){
     if (parent == nullptr){
         return false;
@@ -123,19 +144,25 @@ void Tree<T>::printPreOrder(std::shared_ptr<node<T>> root){
 }
 template<class T>
 void Tree<T>::remove(T value){
-    
+    remove(root,value);
 }
 
 template <class T>
-void Tree<T>::remove(std::shared_ptr<node<T>>&parent, T &value){
+void Tree<T>::remove(std::shared_ptr<node<T>> &parent, T &value){
     if(parent == nullptr){
         return;
     }else if(value < parent->value){
         remove(parent->left, value);
     }else if(value > parent->value){
         remove(parent->right, value);
+    }//two children
+    else if(parent->left != nullptr && parent->right != nullptr){
+        parent->value = findMin(parent->right)->value;
+        remove(parent->right,parent->value);
     }else{
-        
+        std::shared_ptr<node<T>> oldnode = parent;
+        parent = (parent->left != nullptr) ? parent->left : parent -> right;
+        numberOfItems--;
     }
 }
 

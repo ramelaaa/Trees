@@ -25,6 +25,8 @@ int main(int argc, const char * argv[]) {
     assert(list.size() == mytree.size());
     assert(mytree.contains(list[1]) == true);
     assert(mytree.contains(23) == false);
-    cout << "Height: " << mytree.height() << endl;
+    mytree.remove(2);
+    assert(mytree.size() == list.size()-1);
+   
     return 0;
 }

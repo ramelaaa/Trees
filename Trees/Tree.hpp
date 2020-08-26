@@ -10,7 +10,6 @@
 #define Tree_hpp
 #include <memory>
 
-//#include <stdio.h>
 #include "node.hpp"
 
 
@@ -19,7 +18,6 @@ class Tree{
 public:
     // Default Constructor
     Tree();
-    
    
     bool contains(T value);
     node<T>* findMin(node<T>* t) const;
@@ -31,18 +29,14 @@ public:
     void printPreOrder();
     void remove(T value);
     
-    // Other Functions to Implement
-    // remove
-    // find min
-    // find max
-    
-    
 private:
     
     std::shared_ptr<node<T>> root;
     int numberOfItems;
 
     bool contains(std::shared_ptr<node<T>> &parent, T value);
+    std::shared_ptr<node<T>> findMax( std::shared_ptr<node<T>>parent);
+    std::shared_ptr<node<T>> findMin( std::shared_ptr<node<T>>parent);
     int height(std::shared_ptr<node<T>>& parent);
     void insert( std::shared_ptr<node<T>> &parent, T &value);
     void printInOrder(std::shared_ptr<node<T>> root);
