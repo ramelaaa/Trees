@@ -7,6 +7,8 @@
 //
 
 #include <iostream>
+#include <vector>
+#include <cassert>
 #include "Tree.hpp"
 using namespace std;
 
@@ -14,15 +16,13 @@ int main(int argc, const char * argv[]) {
     // insert code here...
 //    std::cout << "Hello, World!\n";
     Tree<int> mytree;
+    vector<int> list{7,2,9,1,8,5,4};
     
-    mytree.insert(7);
-    mytree.insert(2);
-    mytree.insert(9);
-    int x = mytree.getNumberOfItems();
-    cout <<"There are " << x << " elements." <<endl;
-    mytree.printInOrder();
-    mytree.printPreOrder();
-    mytree.printPostOrder();
+    for(auto x: list){
+        mytree.insert(x);
+    }
+    
+    assert(list.size() == mytree.getNumberOfItems());
     
     return 0;
 }
