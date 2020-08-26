@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4F7BE85724F54BA200B8A238 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7BE85624F54BA200B8A238 /* main.cpp */; };
+		4F7BE85F24F54BC200B8A238 /* node.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7BE85D24F54BC200B8A238 /* node.cpp */; };
+		4F7BE86224F54C4900B8A238 /* Tree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F7BE86024F54C4900B8A238 /* Tree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		4F7BE85324F54BA200B8A238 /* Trees */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Trees; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F7BE85624F54BA200B8A238 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4F7BE85D24F54BC200B8A238 /* node.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = node.cpp; sourceTree = "<group>"; };
+		4F7BE85E24F54BC200B8A238 /* node.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = node.hpp; sourceTree = "<group>"; };
+		4F7BE86024F54C4900B8A238 /* Tree.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Tree.cpp; sourceTree = "<group>"; };
+		4F7BE86124F54C4900B8A238 /* Tree.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Tree.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,10 @@
 			isa = PBXGroup;
 			children = (
 				4F7BE85624F54BA200B8A238 /* main.cpp */,
+				4F7BE85D24F54BC200B8A238 /* node.cpp */,
+				4F7BE85E24F54BC200B8A238 /* node.hpp */,
+				4F7BE86024F54C4900B8A238 /* Tree.cpp */,
+				4F7BE86124F54C4900B8A238 /* Tree.hpp */,
 			);
 			path = Trees;
 			sourceTree = "<group>";
@@ -119,7 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F7BE86224F54C4900B8A238 /* Tree.cpp in Sources */,
 				4F7BE85724F54BA200B8A238 /* main.cpp in Sources */,
+				4F7BE85F24F54BC200B8A238 /* node.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
