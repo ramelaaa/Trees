@@ -6,39 +6,50 @@
 //  Copyright © 2020 Ramela Ramnauth. All rights reserved.
 //
 
+#ifndef Tree_IMPL
+#define Tree_IMPL
+
 #include "Tree.hpp"
 #include "node.hpp"
 #include <iostream>
+
 // Public Methods
-Tree::Tree(){
+template<class T>
+Tree<T>::Tree(){
     root = nullptr;
     numberOfItems = 0;
 }
 
-void Tree::insert(int value){
+template<class T>
+void Tree<T>::insert(int value){
     insert(root,value);
 }
 
-int Tree::getNumberOfItems(){
+template<class T>
+int Tree<T>::getNumberOfItems(){
     return numberOfItems;
 }
 
-void Tree::printInOrder(){
+template<class T>
+void Tree<T>::printInOrder(){
     printInOrder(root);
 }
 
-void Tree::printPreOrder(){
+template<class T>
+void Tree<T>::printPreOrder(){
     printPreOrder(root);
 }
 
-void Tree::printPostOrder(){
+template<class T>
+void Tree<T>::printPostOrder(){
     printPostOrder(root);
 }
 
 // Private Methods
-void Tree::insert(NodePointer &parent, int &value){
+template<class T>
+void Tree<T>::insert(std::shared_ptr<node<T>> &parent, int &value){
     if (parent == nullptr){
-        parent.reset(new node(value));
+        parent.reset(new node<T>(value));
         if(value == parent->value){
             numberOfItems++;
         }
@@ -53,7 +64,8 @@ void Tree::insert(NodePointer &parent, int &value){
 }
 
 // Private Print Methods
-void Tree::printInOrder(NodePointer root){
+template<class T>
+void Tree<T>::printInOrder(std::shared_ptr<node<T>> root){
     if (root == nullptr) {
         
     }else{
@@ -63,7 +75,8 @@ void Tree::printInOrder(NodePointer root){
     }
 }
 
-void Tree::printPostOrder(NodePointer root){
+template<class T>
+void Tree<T>::printPostOrder(std::shared_ptr<node<T>> root){
     if(root == nullptr){
         
     }else{
@@ -73,7 +86,8 @@ void Tree::printPostOrder(NodePointer root){
     }
 }
 
-void Tree::printPreOrder(NodePointer root){
+template<class T>
+void Tree<T>::printPreOrder(std::shared_ptr<node<T>> root){
     if(root == nullptr){
         
     }else{
@@ -82,3 +96,5 @@ void Tree::printPreOrder(NodePointer root){
         printInOrder(root->right);
     }
 }
+
+#endif

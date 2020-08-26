@@ -11,13 +11,13 @@
 #include "memory"
 
 //#include <stdio.h>
-
+template <class T>
 class node{
 public:
-    node(int newValue);
-    int value;
+    node(const T& newValue);
+    T value;
     std::shared_ptr<node> left;
     std::shared_ptr<node> right;
 };
-
+#include "node.cpp"
 #endif /* node_hpp */

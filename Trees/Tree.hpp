@@ -12,7 +12,9 @@
 
 //#include <stdio.h>
 #include "node.hpp"
-using NodePointer = std::shared_ptr<node>;
+
+
+template <class T>
 class Tree{
 public:
     Tree();
@@ -30,13 +32,13 @@ public:
 private:
     
     //Print Methods
-    void printInOrder(NodePointer root);
-    void printPreOrder(NodePointer root);
-    void printPostOrder(NodePointer root);
+    void printInOrder(std::shared_ptr<node<T>> root);
+    void printPreOrder(std::shared_ptr<node<T>> root);
+    void printPostOrder(std::shared_ptr<node<T>> root);
     
-    NodePointer root;
-    void insert( NodePointer &parent, int &value);
+    std::shared_ptr<node<T>> root;
+    void insert( std::shared_ptr<node<T>> &parent, int &value);
     int numberOfItems;
 };
-
+#include "Tree.cpp"
 #endif /* Tree_hpp */

@@ -13,7 +13,7 @@ using namespace std;
 int main(int argc, const char * argv[]) {
     // insert code here...
 //    std::cout << "Hello, World!\n";
-    Tree mytree;
+    Tree<int> mytree;
     
     mytree.insert(7);
     mytree.insert(2);

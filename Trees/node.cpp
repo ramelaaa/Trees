@@ -5,11 +5,16 @@
 //  Created by Ramela Ramnauth on 8/25/20.
 //  Copyright © 2020 Ramela Ramnauth. All rights reserved.
 //
-
+#ifndef node_impl
+#define node_impl
 #include "node.hpp"
 
-node::node(int newValue){
+template <class T>
+node<T>::node(const T& newValue){
     value = newValue;
     left = nullptr;
     right = nullptr;
 }
+
+
+#endif
