@@ -17,28 +17,38 @@
 template <class T>
 class Tree{
 public:
+    // Default Constructor
     Tree();
-    void insert(int value);
-    int getNumberOfItems();
     
-    // Print Methods
+   
+    bool contains(T value);
+    node<T>* findMin(node<T>* t) const;
+    const int size();
+    int height();
+    void insert(int value);
     void printInOrder();
-    void printPreOrder();
     void printPostOrder();
+    void printPreOrder();
+    void remove(T value);
     
     // Other Functions to Implement
+    // remove
+    // find min
+    // find max
     
     
 private:
     
-    //Print Methods
-    void printInOrder(std::shared_ptr<node<T>> root);
-    void printPreOrder(std::shared_ptr<node<T>> root);
-    void printPostOrder(std::shared_ptr<node<T>> root);
-    
     std::shared_ptr<node<T>> root;
-    void insert( std::shared_ptr<node<T>> &parent, int &value);
     int numberOfItems;
+
+    bool contains(std::shared_ptr<node<T>> &parent, T value);
+    int height(std::shared_ptr<node<T>>& parent);
+    void insert( std::shared_ptr<node<T>> &parent, T &value);
+    void printInOrder(std::shared_ptr<node<T>> root);
+    void printPostOrder(std::shared_ptr<node<T>> root);
+    void printPreOrder(std::shared_ptr<node<T>> root);
+    void remove(std::shared_ptr<node<T>> &parent,T& value);
 };
 #include "Tree.cpp"
 #endif /* Tree_hpp */

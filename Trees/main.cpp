@@ -22,7 +22,9 @@ int main(int argc, const char * argv[]) {
         mytree.insert(x);
     }
     
-    assert(list.size() == mytree.getNumberOfItems());
-    
+    assert(list.size() == mytree.size());
+    assert(mytree.contains(list[1]) == true);
+    assert(mytree.contains(23) == false);
+    cout << "Height: " << mytree.height() << endl;
     return 0;
 }
