@@ -20,14 +20,14 @@ Tree<T>::Tree(){
 }
 
 template<class T>
-bool Tree<T>::contains(T value){
-    return contains(root, value);
+bool Tree<T>::contains( T value ){
+    return contains( root, value );
 }
 
 template<class T>
-std::shared_ptr<node<T>> Tree<T>::findMax(std::shared_ptr<node<T>>parent){
-    if( parent != nullptr){
-        while(parent->right != nullptr ){
+std::shared_ptr<node<T>> Tree<T>::findMax( std::shared_ptr<node<T>>parent ){
+    if( parent != nullptr ){
+        while( parent->right != nullptr ){
             parent = parent->right;
         }
     }
@@ -35,7 +35,7 @@ std::shared_ptr<node<T>> Tree<T>::findMax(std::shared_ptr<node<T>>parent){
 }
 
 template<class T>
-std::shared_ptr<node<T>> Tree<T>::findMin(std::shared_ptr<node<T>> parent){
+std::shared_ptr<node<T>> Tree<T>::findMin( std::shared_ptr<node<T>> parent ){
     if(parent == nullptr){
         return nullptr;
     }
@@ -93,7 +93,6 @@ void Tree<T>::insert(std::shared_ptr<node<T>> &parent, T &value){
         // duplicate - do nothing!
     }
 }
-
 
 template<class T>
 void Tree<T>::printInOrder(){

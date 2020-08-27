@@ -13,20 +13,14 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-//    std::cout << "Hello, World!\n";
-    Tree<int> mytree;
+    
+    Tree<int> tree;
+    Tree<int> secondTree;
     vector<int> list{7,2,9,1,8,5,4};
-    
-    for(auto x: list){
-        mytree.insert(x);
-    }
-    
-    assert(list.size() == mytree.size());
-    assert(mytree.contains(list[1]) == true);
-    assert(mytree.contains(23) == false);
-    mytree.remove(2);
-    assert(mytree.size() == list.size()-1);
+    vector<int> secondList{5,2,8,1,4,7,9};
+    for(auto x: list){ tree.insert(x); }
+    for(auto x: secondList){secondTree.insert(x);}
+    cout << tree.height() << " " << secondTree.height() << endl;
    
     return 0;
 }

@@ -19,30 +19,29 @@ public:
     // Default Constructor
     Tree();
    
-    bool contains(T value);
-    node<T>* findMin(node<T>* t) const;
+    bool contains( T value );
     const int size();
     int height();
-    void insert(int value);
+    void insert( int value );
     void printInOrder();
     void printPostOrder();
     void printPreOrder();
-    void remove(T value);
+    void remove( T value );
     
 private:
     
     std::shared_ptr<node<T>> root;
     int numberOfItems;
 
-    bool contains(std::shared_ptr<node<T>> &parent, T value);
-    std::shared_ptr<node<T>> findMax( std::shared_ptr<node<T>>parent);
-    std::shared_ptr<node<T>> findMin( std::shared_ptr<node<T>>parent);
-    int height(std::shared_ptr<node<T>>& parent);
-    void insert( std::shared_ptr<node<T>> &parent, T &value);
-    void printInOrder(std::shared_ptr<node<T>> root);
-    void printPostOrder(std::shared_ptr<node<T>> root);
-    void printPreOrder(std::shared_ptr<node<T>> root);
-    void remove(std::shared_ptr<node<T>> &parent,T& value);
+    bool contains( std::shared_ptr<node<T>> &parent, T value );
+    std::shared_ptr<node<T>> findMax( std::shared_ptr<node<T>>parent );
+    std::shared_ptr<node<T>> findMin( std::shared_ptr<node<T>>parent );
+    int height(std::shared_ptr<node<T>>& parent );
+    void insert( std::shared_ptr<node<T>> &parent, T &value );
+    void printInOrder( std::shared_ptr<node<T>> root );
+    void printPostOrder( std::shared_ptr<node<T>> root );
+    void printPreOrder( std::shared_ptr<node<T>> root );
+    void remove( std::shared_ptr<node<T>> &parent,T& value );
 };
 #include "Tree.cpp"
 #endif /* Tree_hpp */
